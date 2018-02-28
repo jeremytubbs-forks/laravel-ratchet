@@ -65,7 +65,7 @@ abstract class RatchetWsServer implements MessageComponentInterface
     {
         $this->conn = $conn;
 
-        // $this->attach()->throttle()->limit();
+        $this->attach(); //->throttle()->limit();
     }
 
     protected function attach()
