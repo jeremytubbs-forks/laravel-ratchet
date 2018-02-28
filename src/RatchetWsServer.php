@@ -146,15 +146,15 @@ abstract class RatchetWsServer implements MessageComponentInterface
     {
         $this->console->comment(sprintf('Message from %d: %s', $conn->resourceId, $input));
 
-        if ($this->isThrottled($conn, 'onMessage')) {
-            $this->console->info(sprintf('Message throttled: %d', $conn->resourceId));
-            $this->send($conn, trans('ratchet::messages.tooManyMessages'));
-            $this->throttled = true;
+        // if ($this->isThrottled($conn, 'onMessage')) {
+        //     $this->console->info(sprintf('Message throttled: %d', $conn->resourceId));
+        //     $this->send($conn, trans('ratchet::messages.tooManyMessages'));
+        //     $this->throttled = true;
 
-            if (config('ratchet.abortOnMessageThrottle')) {
-                $this->abort($conn);
-            }
-        }
+        //     if (config('ratchet.abortOnMessageThrottle')) {
+        //         $this->abort($conn);
+        //     }
+        // }
     }
 
     /**
