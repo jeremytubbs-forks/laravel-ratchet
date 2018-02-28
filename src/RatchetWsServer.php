@@ -41,7 +41,7 @@ abstract class RatchetWsServer implements MessageComponentInterface
      *
      * @var [type]
      */
-    protected $throttled = false;
+    // protected $throttled = false;
 
     /**
      * Set clients and console.
@@ -65,7 +65,7 @@ abstract class RatchetWsServer implements MessageComponentInterface
     {
         $this->conn = $conn;
 
-        $this->attach()->throttle()->limit();
+        // $this->attach()->throttle()->limit();
     }
 
     protected function attach()
@@ -84,17 +84,17 @@ abstract class RatchetWsServer implements MessageComponentInterface
      *
      * @return [type] [description]
      */
-    protected function throttle()
-    {
-        if ($this->isThrottled($this->conn, 'onOpen')) {
-            $this->console->info(sprintf('Connection throttled: %d', $this->conn->resourceId));
-            $this->conn->send(trans('ratchet::messages.tooManyConnectionAttempts'));
-            $this->throttled = true;
-            $this->conn->close();
-        }
+    // protected function throttle()
+    // {
+    //     if ($this->isThrottled($this->conn, 'onOpen')) {
+    //         $this->console->info(sprintf('Connection throttled: %d', $this->conn->resourceId));
+    //         $this->conn->send(trans('ratchet::messages.tooManyConnectionAttempts'));
+    //         $this->throttled = true;
+    //         $this->conn->close();
+    //     }
 
-        return $this;
-    }
+    //     return $this;
+    // }
 
     /**
      * Limit connections.
