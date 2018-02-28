@@ -4,7 +4,7 @@ namespace Askedio\LaravelRatchet;
 
 use Ratchet\ConnectionInterface;
 use Ratchet\MessageComponentInterface;
-use GrahamCampbell\Throttle\Facades\Throttle;
+// use GrahamCampbell\Throttle\Facades\Throttle;
 
 abstract class RatchetWsServer implements MessageComponentInterface
 {
@@ -120,19 +120,19 @@ abstract class RatchetWsServer implements MessageComponentInterface
      *
      * @return bool [description]
      */
-    protected function isThrottled($conn, $setting)
-    {
-        $connectionThrottle = explode(':', config(sprintf('ratchet.throttle.%s', $setting)));
+    // protected function isThrottled($conn, $setting)
+    // {
+    //     $connectionThrottle = explode(':', config(sprintf('ratchet.throttle.%s', $setting)));
 
-        return !Throttle::attempt(
-            [
-                'ip'    => $conn->remoteAddress,
-                'route' => $setting,
-            ],
-            (int) $connectionThrottle[0],
-            (int) $connectionThrottle[1]
-        );
-    }
+    //     return !Throttle::attempt(
+    //         [
+    //             'ip'    => $conn->remoteAddress,
+    //             'route' => $setting,
+    //         ],
+    //         (int) $connectionThrottle[0],
+    //         (int) $connectionThrottle[1]
+    //     );
+    // }
 
     /**
      * Perform action on message.
