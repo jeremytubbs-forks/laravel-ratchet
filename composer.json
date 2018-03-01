@@ -13,7 +13,7 @@
         "php": ">=7.1.0",
         "ext-zmq": "*",
         "cboden/ratchet": "^0.4",
-        "graham-campbell/throttle": "^6.0",
+        "graham-campbell/throttle": "dev-master",
         "illuminate/console": "~5.5.0|~5.6.0",
         "illuminate/support": "~5.5.0|~5.6.0",
         "react/zmq": "0.2.*|0.3.*"
