@@ -4,6 +4,11 @@
     "keywords": ["laravel"],
     "license": "MIT",
     "type": "library",
+    "repositories": [{
+            "type": "vcs",
+            "url": "git@github.com:stephandesouza/Laravel-Throttle.git"
+        }
+    ],
     "require": {
         "php": ">=7.1.0",
         "ext-zmq": "*",
